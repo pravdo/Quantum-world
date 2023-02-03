@@ -21,6 +21,7 @@ const App = () => {
       .catch((err) => {
         console.log(err);
       });
+    setWord("");
   };
 
   // console.log(process.env.REACT_APP_UNSPLASH_KEY);
