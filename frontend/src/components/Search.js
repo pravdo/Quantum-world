@@ -4,16 +4,18 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 
-const Search = () => {
+const Search = ({ word, setWord, handleSearchSubmit }) => {
   return (
     <Container className="mt-2">
       <Row className="justify-content-center">
         <Col xs={12} md={8} lg={6}>
-          <Form>
+          <Form onSubmit={handleSearchSubmit}>
             <Row>
               <Col xs={9}>
                 <Form.Control
-                  type="email"
+                  type="text"
+                  value={word}
+                  onChange={(e) => setWord(e.target.value)}
                   placeholder="Search for new image..."
                 />
               </Col>
