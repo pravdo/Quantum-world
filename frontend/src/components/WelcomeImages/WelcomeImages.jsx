@@ -10,7 +10,7 @@ const WelcomeImages = () => {
         <hr className="my-4"></hr>
         <p>Follow the link bellow to learn more</p>
         <a
-          class="btn btn-primary btn-lg"
+          className="btn btn-primary btn-lg"
           href="https://unsplash.com"
           target="_blank"
           rel="noreferrer"
