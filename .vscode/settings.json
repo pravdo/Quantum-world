@@ -1,0 +1,10 @@
+{
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "eslint.validate": ["html", "javascript", "javascriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+  //   "python.pythonPath": "api/.venv/Scripts/python"
+  // "python.pipenvPath": "api/.venv/Scripts/python"
+}
