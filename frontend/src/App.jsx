@@ -8,6 +8,7 @@ import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Articles from './pages/Articles/Articles';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Chatbot from './components/ChatBot/Chatbot';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/shopping-cart" element={<ShoppingCart />} />
         <Route path="/image-search" element={<ImagesGallery />} />
       </Routes>
+      <Chatbot />
     </div>
   );
 };

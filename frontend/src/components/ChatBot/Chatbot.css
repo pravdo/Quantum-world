@@ -1,0 +1,9 @@
+.chat-icon {
+  margin-top: 45vh;
+  margin-left: 85vw;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
