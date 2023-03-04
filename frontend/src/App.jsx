@@ -5,6 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
 import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
+import Articles from './pages/Articles/Articles';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
 
 const App = () => {
   return (
@@ -13,10 +16,13 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/articles" element={<Articles />} />
         <Route path="/shopping-cart" element={<ShoppingCart />} />
+        <Route path="/image-search" element={<ImagesGallery />} />
       </Routes>
-      <ImagesGallery />
     </div>
   );
 };
