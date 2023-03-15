@@ -10,8 +10,10 @@ import path from "path";
 import { fileURLToPath } from "url"; // properly set path when directories are configured
 import authRoutes from "./routes/auth.js";
 import userRoutes from "./routes/users.js";
-import articleRoutes from "./routes/routes.js";
+// import articleRoutes from "./routes/routes.js";
 import { register } from "./controllers/auth.js";
+import User from "./models/User.js";
+// import Products from "./models/Products.js";
 
 /* Configurations */
 const __filename = fileURLToPath(import.meta.url);
@@ -46,7 +48,7 @@ app.post("/auth/register", upload.single("picture"), register);
 /* Routes */
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
-app.use("/atricles", articleRoutes);
+// app.use("/atricles", articleRoutes);
 
 /* Mongoose Setup */
 const PORT = process.env.PORT || 6001;
@@ -57,5 +59,8 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
+    /* Add data one time */
+    User.insertMany(users);
   })
   .catch((error) => console.log(`${error} did not connect`));
