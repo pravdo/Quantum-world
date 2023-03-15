@@ -19,7 +19,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:userId" element={<Profile />} />{' '}
+        {/* TODO: check path */}
         <Route path="/articles" element={<Articles />} />
         <Route path="/shopping-cart" element={<ShoppingCart />} />
         <Route path="/image-search" element={<ImagesGallery />} />
