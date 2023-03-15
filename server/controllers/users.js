@@ -1,7 +1,6 @@
-import User from "../models/User";
-import Products from "../models/Products";
+import User from "../models/User.js";
 
-/* Read */
+/* READ */
 export const getUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -12,55 +11,52 @@ export const getUser = async (req, res) => {
   }
 };
 
-export const getProductProducts = async (req, res) => {
+export const getUserFriends = async (req, res) => {
   try {
     const { id } = req.params;
     const user = await User.findById(id);
 
-    const products = await Promise.all(
-      user.products.map((id) => Products.findById(id))
+    const friends = await Promise.all(
+      user.friends.map((id) => User.findById(id))
     );
-
-    const formattedProducts = products.map(
-      ({ _id, brand, productName, price, category, subCategory }) => {
-        return { _id, brand, productName, price, category, subCategory };
+    const formattedFriends = friends.map(
+      ({ _id, firstName, lastName, occupation, location, picturePath }) => {
+        return { _id, firstName, lastName, occupation, location, picturePath };
       }
     );
-    res.status(200).json(formattedProducts);
+    res.status(200).json(formattedFriends);
   } catch (err) {
     res.status(404).json({ message: err.message });
   }
 };
 
-/* Update */
-export const addRemoveItem = async (req, res) => {
+/* UPDATE */
+export const addRemoveFriend = async (req, res) => {
   try {
-    const { id, productId } = req.params;
+    const { id, friendId } = req.params;
     const user = await User.findById(id);
-    const product = await Products.findById(productId);
+    const friend = await User.findById(friendId);
 
-    if (user.products.includes(productId)) {
-      user.products = user.products.filter((id) => id !== productId);
-      product.users_ = product.users_.filter((id) => id !== id); // to remove user from selected item (if needed)
+    if (user.friends.includes(friendId)) {
+      user.friends = user.friends.filter((id) => id !== friendId);
+      friend.friends = friend.friends.filter((id) => id !== id);
     } else {
-      user.products.push(productId);
-      product.users_.push(id); // // to add user to selected item (if needed)
+      user.friends.push(friendId);
+      friend.friends.push(id);
     }
-
     await user.save();
-    await product.save();
+    await friend.save();
 
-    const products = await Promise.all(
-      user.products.map((id) => Products.findById(id))
+    const friends = await Promise.all(
+      user.friends.map((id) => User.findById(id))
     );
-
-    const formattedProducts = products.map(
-      ({ _id, brand, productName, price, category, subCategory }) => {
-        return { _id, brand, productName, price, category, subCategory };
+    const formattedFriends = friends.map(
+      ({ _id, firstName, lastName, occupation, location, picturePath }) => {
+        return { _id, firstName, lastName, occupation, location, picturePath };
       }
     );
 
-    res.status(200).json(formattedProducts);
+    res.status(200).json(formattedFriends);
   } catch (err) {
     res.status(404).json({ message: err.message });
   }

@@ -8,7 +8,7 @@ const UserSchema = new mongoose.Schema(
       min: 2,
       max: 50,
     },
-    lasrName: {
+    lastName: {
       type: String,
       required: true,
       min: 2,
@@ -23,23 +23,20 @@ const UserSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      min: 6,
+      min: 5,
     },
     picturePath: {
       type: String,
       default: "",
     },
-    products: {
-      // TODO
-      type: Array,
-      default: [],
-    },
-    articles: {
+    friends: {
       type: Array,
       default: [],
     },
     location: String,
     occupation: String,
+    viewedProfile: Number,
+    impressions: Number,
   },
   { timestamps: true }
 );
