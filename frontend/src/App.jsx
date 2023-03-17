@@ -25,14 +25,13 @@ const App = () => {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <CssBaseline></CssBaseline>;
-        <Header title="Quantum World" />
+        <CssBaseline></CssBaseline>;{/* <Header title="Quantum World" /> */}
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile/:userId" element={<Profile />} />{' '}
+          <Route path="/profile/:userId" element={<Profile />} />
           {/* TODO: check path */}
           <Route path="/articles" element={<Articles />} />
           <Route path="/shopping-cart" element={<ShoppingCart />} />
