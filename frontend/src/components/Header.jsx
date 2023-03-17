@@ -8,7 +8,6 @@ import {
   MenuItem,
   FormControl,
   useTheme,
-  useMedi,
   useMediaQuery,
 } from '@mui/material';
 import {
@@ -21,33 +20,30 @@ import {
   Menu,
   Close,
 } from '@mui/icons-material';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setMode, setLogout } from 'state';
-import { useNavigate } from 'react-router-dom';
 import FlexBetween from './FlexBeteen';
 
-import { Navbar } from 'react-bootstrap';
-import CustomLink from './CustomLink';
+// import { Navbar } from 'react-bootstrap';
+// import CustomLink from './CustomLink';
 import './Header.css';
 import { ReactComponent as Logo } from '../images/textLogo.svg';
 import { ReactComponent as MainLogo } from '../images/main-logo.svg';
 
-const navbarStyle = {
-  backgroundColor: '#eeeeee',
-};
+// const navbarStyle = {
+//   backgroundColor: '#eeeeee',
+// };
 
 const Header = ({ title }) => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
   const isNonMobileScreens = useMediaQuery('(min-width: 1000px');
 
   const theme = useTheme();
   const neutralLight = theme.palette.neutral.light;
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
-  const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
   // const fullName = `${user.firstName} ${user.lastName}`;

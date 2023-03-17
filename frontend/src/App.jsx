@@ -7,7 +7,7 @@ import { createTheme } from '@mui/material/styles';
 
 import { themeSettings } from 'theme';
 
-import Header from './components/Header';
+// import Header from './components/Header';
 import ImagesGallery from './components/ImagesGallery';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
@@ -25,10 +25,11 @@ const App = () => {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <CssBaseline></CssBaseline>;{/* <Header title="Quantum World" /> */}
+        <CssBaseline></CssBaseline>
+        {/* <Header title="Quantum World" /> */}
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile/:userId" element={<Profile />} />
