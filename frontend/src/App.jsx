@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
@@ -21,6 +21,7 @@ import Chatbot from './components/ChatBot/Chatbot';
 const App = () => {
   const mode = useSelector((state) => state.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const isAuth = Boolean(useSelector((state) => state.token));
 
   return (
     <div>
@@ -29,10 +30,16 @@ const App = () => {
         {/* <Header title="Quantum World" /> */}
         <Navbar />
         <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/home"
+            element={isAuth ? <Home /> : <Navigate to="/" />}
+          />
+          <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/profile/:userId" element={<Profile />} />
+          <Route
+            path="/profile/:userId"
+            element={isAuth ? <Profile /> : <Navigate to="/" />}
+          />
           {/* TODO: check path */}
           <Route path="/articles" element={<Articles />} />
           <Route path="/shopping-cart" element={<ShoppingCart />} />

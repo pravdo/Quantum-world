@@ -20,7 +20,7 @@ import {
   Menu,
   Close,
 } from '@mui/icons-material';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from 'state';
 import FlexBetween from './FlexBeteen';
 
@@ -37,7 +37,7 @@ import { ReactComponent as MainLogo } from '../images/main-logo.svg';
 const Header = ({ title }) => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
-  // const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   const isNonMobileScreens = useMediaQuery('(min-width: 1000px');
 
   const theme = useTheme();
@@ -46,8 +46,8 @@ const Header = ({ title }) => {
   const background = theme.palette.background.default;
   const alt = theme.palette.background.alt;
 
-  // const fullName = `${user.firstName} ${user.lastName}`;
-  const fullName = 'TBD';
+  const fullName = `${user.firstName} ${user.lastName}`;
+  // const fullName = 'TBD';
 
   return (
     <header className="header">
