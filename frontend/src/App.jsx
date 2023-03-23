@@ -34,6 +34,7 @@ const App = () => {
             path="/home"
             element={isAuth ? <Home /> : <Navigate to="/" />}
           />
+          {/* <Route path="/home" element={<Home />} /> */}
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route
