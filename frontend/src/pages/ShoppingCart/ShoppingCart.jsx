@@ -1,5 +1,7 @@
+import Navbar_Shopping from 'components/Navbar_ShoppingCart/NavbarShopping';
+
 const ShoppingCart = () => {
-  return <h1>ShoppingCart</h1>;
+  return <Navbar_Shopping />;
 };
 
 export default ShoppingCart;
