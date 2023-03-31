@@ -1,4 +1,5 @@
 import { Typography, useTheme } from '@mui/material';
+import CartButton from 'components/ShoppingCart_Components/CartButtons';
 
 import { useNavigate } from 'react-router-dom';
 import CustomLink from '../CustomLink';
@@ -25,10 +26,12 @@ const Navbar = () => {
       >
         QW - Explore all in one place
       </Typography>
+
       <ul>
         <CustomLink to="/profile">Profile</CustomLink>
         <CustomLink to="/articles">Articles</CustomLink>
-        <CustomLink to="/shopping-cart">Shopping Cart</CustomLink>
+        <CustomLink to="/online-shop">Online Shop</CustomLink>
+        <CartButton />
         <CustomLink to="/image-search">Search Image</CustomLink>
       </ul>
     </nav>

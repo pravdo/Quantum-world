@@ -23,6 +23,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from 'state';
 import FlexBetween from './FlexBeteen';
+// import { useCartContext } from 'context/cart_context';
 
 // import { Navbar } from 'react-bootstrap';
 // import CustomLink from './CustomLink';
@@ -45,6 +46,7 @@ const Header = ({ title }) => {
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
   const alt = theme.palette.background.alt;
+  // const clearCart = useCartContext();
 
   const fullName = `${user.firstName} ${user.lastName}`;
   // const fullName = 'TBD';
@@ -108,7 +110,12 @@ const Header = ({ title }) => {
                   <MenuItem value={fullName}>
                     <Typography>{fullName}</Typography>
                   </MenuItem>
-                  <MenuItem onClick={() => dispatch(setLogout())}>
+                  <MenuItem
+                    onClick={() => {
+                      // clearCart();
+                      dispatch(setLogout());
+                    }}
+                  >
                     Log Out
                   </MenuItem>
                 </Select>

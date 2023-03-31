@@ -44,7 +44,7 @@ const App = () => {
           />
           {/* TODO: check path */}
           <Route path="/articles" element={<Articles />} />
-          <Route path="/shopping-cart" element={<ShoppingCart />} />
+          <Route path="/online-shop" element={<ShoppingCart />} />
           <Route path="/" element={<Products />} />
           <Route path="/image-search" element={<ImagesGallery />} />
         </Routes>
