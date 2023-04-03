@@ -17,6 +17,7 @@ import Articles from './pages/Articles/Articles';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Products from 'pages/Products/Products';
+import Footer from 'components/Footer';
 // import Chatbot from './components/ChatBot/Chatbot';
 
 const App = () => {
@@ -44,10 +45,11 @@ const App = () => {
           />
           {/* TODO: check path */}
           <Route path="/articles" element={<Articles />} />
-          <Route path="/online-shop" element={<ShoppingCart />} />
+          <Route path="/online-store" element={<ShoppingCart />} />
           <Route path="/" element={<Products />} />
           <Route path="/image-search" element={<ImagesGallery />} />
         </Routes>
+        <Footer />
         {/* <Chatbot /> */}
       </ThemeProvider>
     </div>
