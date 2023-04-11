@@ -19,6 +19,7 @@ import Register from './pages/Register/Register';
 import Products from 'pages/Products/Products';
 import Footer from 'components/Footer';
 // import Chatbot from './components/ChatBot/Chatbot';
+import Error from 'pages/Error/Error';
 
 const App = () => {
   const mode = useSelector((state) => state.mode);
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/online-store" element={<ShoppingCart />} />
           <Route path="/" element={<Products />} />
           <Route path="/image-search" element={<ImagesGallery />} />
+          <Route path="*" element={<Error />} />
         </Routes>
         <Footer />
         {/* <Chatbot /> */}

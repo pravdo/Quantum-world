@@ -1,7 +1,7 @@
-import Navbar_Shopping from 'components/Navbar_ShoppingCart/NavbarShopping';
+import NavbarShopping from 'components/NavbarShoppingCart/NavbarShopping';
 
 const ShoppingCart = () => {
-  return <Navbar_Shopping />;
+  return <NavbarShopping />;
 };
 
 export default ShoppingCart;

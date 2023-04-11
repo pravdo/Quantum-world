@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import CustomLink from 'components/CustomLink';
 
-const Navbar_Shopping = () => {
+const NavbarShopping = () => {
   const isAuth = Boolean(useSelector((state) => state.token));
 
   return (
@@ -75,4 +75,4 @@ const NavShoppingContainer = styled.nav`
   }
 `;
 
-export default Navbar_Shopping;
+export default NavbarShopping;
