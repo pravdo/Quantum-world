@@ -16,7 +16,8 @@ import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Articles from './pages/Articles/Articles';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
-import Products from 'pages/Products/Products';
+// import Products from 'pages/Products/Products';
+import SingleProductPage from 'pages/SingleProductPage/SingleProductPage';
 import Footer from 'components/Footer';
 // import Chatbot from './components/ChatBot/Chatbot';
 import Error from 'pages/Error/Error';
@@ -47,7 +48,7 @@ const App = () => {
           {/* TODO: check path */}
           <Route path="/articles" element={<Articles />} />
           <Route path="/online-store" element={<ShoppingCart />} />
-          <Route path="/products/:id" element={<Products />} />
+          <Route path="/products/:id" element={<SingleProductPage />} />
           <Route path="/image-search" element={<ImagesGallery />} />
           <Route path="*" element={<Error />} />
         </Routes>

@@ -30,8 +30,8 @@ const AdvertWidget = () => {
           <Typography color={medium}>mikacosmetics.com</Typography>
         </FlexBetween>
         <Typography color={medium} m="0.5rem 0">
-          Your pathway to stunning and immaculate beauty and made sure your skin
-          is exfoliating skin and shining like light.
+          Test your knowledge! How much do you know about Physics or other
+          topics related to science? Let's find out!
         </Typography>
       </WidgetWrapper>
       <br />
