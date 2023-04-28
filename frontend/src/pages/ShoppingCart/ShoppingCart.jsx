@@ -1,7 +1,16 @@
 import NavbarShopping from 'components/NavbarShoppingCart/NavbarShopping';
+import ProductsPage from 'pages/Products/Products';
+// import { FilterProvider } from 'context/filter_context';
 
 const ShoppingCart = () => {
-  return <NavbarShopping />;
+  return (
+    <>
+      <NavbarShopping />
+      {/* <FilterProvider> */}
+      <ProductsPage />
+      {/* </FilterProvider> */}
+    </>
+  );
 };
 
 export default ShoppingCart;
