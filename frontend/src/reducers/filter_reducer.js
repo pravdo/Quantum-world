@@ -30,6 +30,7 @@ const filter_reducer = (state, action) => {
     return { ...state, sort: action.payload };
   }
   if (action.type === SORT_PRODUCTS) {
+    // sort logic
     const { sort, filtered_products } = state;
     let tempProducts = [];
     if (sort === 'price-lowest') {
