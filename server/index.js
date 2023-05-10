@@ -16,7 +16,8 @@ import { createPost } from "./controllers/posts.js";
 import { verifyToken } from "./middleware/auth.js";
 import User from "./models/User.js";
 import Post from "./models/Post.js";
-import { users, posts } from "./data/index.js";
+import Articles from "./models/Articles.js";
+import { users, posts, articles } from "./data/index.js";
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -65,5 +66,6 @@ mongoose
     /* ADD DATA ONE TIME */
     // User.insertMany(users);
     // Post.insertMany(posts);
+    //Articles.insertMany(articles) - add after complete
   })
   .catch((error) => console.log(`${error} did not connect`));

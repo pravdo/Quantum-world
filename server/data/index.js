@@ -283,3 +283,5 @@ export const posts = [
     ],
   },
 ];
+
+export const articles = [{}, {}];
