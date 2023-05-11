@@ -5,7 +5,7 @@ import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 // import { FaLinkedin } from 'react-icons/fa';
 
 import { ReactComponent as MainLogo } from '../images/main-logo.svg';
-
+//  TODO Finish it by adding Contact us page
 const Footer = () => {
   return (
     <>
@@ -35,7 +35,7 @@ const Footer = () => {
             icon={faAddressCard}
             style={{ fill: '#2980B9', height: '2em', width: '2em' }}
           />
-          <FontAwesomeIcon icon="fa-brands fa-twitter" />
+          {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
           {/* <FontAwesomeIcon
             icon={FaLinkedin}
             style={{ fill: '#2980B9', height: '2em', width: '2em' }}
