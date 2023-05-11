@@ -5,8 +5,8 @@ const ArticlesSchema = new mongoose.Schema(
     avatar: {
       type: String,
       required: true,
-      min: 2,
-      max: 50,
+      min: 1,
+      max: 10,
     },
     title: {
       type: String,
@@ -18,7 +18,7 @@ const ArticlesSchema = new mongoose.Schema(
       type: String,
       required: true,
       max: 50,
-      unique: true,
+      unique: false,
     },
     picturePath: {
       type: String,

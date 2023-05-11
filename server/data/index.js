@@ -284,4 +284,83 @@ export const posts = [
   },
 ];
 
-export const articles = [{}, {}];
+export const articles = [
+  {
+    _id: new mongoose.Types.ObjectId(),
+    avatar: "DP",
+    title: "Doppler Effect",
+    subheader: "R Nave",
+    picturePath: "doppler_effect.png",
+    main_info:
+      "You hear the high pitch of the siren of the approaching ambulance, and notice that its pitch drops suddenly as the ambulance passes you. That is called the Doppler effect.",
+    first_summary:
+      "When a vehicle with a siren passes you, a noticeable drop in the pitch of the sound of the siren will be observed as the vehicle passes. This is an example of the Doppler effect. An approaching source moves closer during period of the sound wave so the effective wavelength is shortened, giving a higher pitch since the velocity of the wave is unchanged. Similarly the pitch of a receding sound source will be lowered.",
+    second_summary:
+      "The speed of sound is determined by the medium in which it is traveling, and therefore is the same for a moving source. But the frequency and wavelength are changed.",
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    avatar: "dB",
+    title: "Decibels",
+    subheader: "R Nave",
+    picturePath: "decibels.jpg",
+    main_info:
+      "The sound intensity I may be expressed in decibels above the standard threshold of hearing I0.",
+    first_summary:
+      "The logarithm involved is just the power of ten of the sound intensity expressed as a multiple of the threshold of hearing intensity. Example: If I = 10,000 times the threshold, then the ratio of the intensity to the threshold intensity is 104, the power of ten is 4, and the intensity is 40 dB",
+    second_summary:
+      "Decibels provide a relative measure of sound intensity. The unit is based on powers of 10 to give a manageable range of numbers to encompass the wide range of the human hearing response, from the standard threshold of hearing at 1000 Hz to the threshold of pain at some ten trillion times that intensity.",
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    avatar: "SE",
+    title: "Solar Eclipse",
+    subheader: "R Nave",
+    picturePath: "solar_eclipse.png",
+    main_info:
+      "A solar eclipse occurs when the Moon's shadow falls on the Earth, and a lunar eclipse occurs when the Earth's shadow falls on the Moon.",
+    first_summary:
+      "A look at the geometry of Moon phases would make it appear that a solar eclipse should happen at every new moon. This does not occur because the plane of the Moon's orbit is tilted 5.2° with respect to the plane of the Earth's orbit around the Sun (the ecliptic plane).",
+    second_summary:
+      "The conditions for eclipses occur only at the points at which the Moon's orbit passes through the ecliptic plane.The illustration below is not to scale and of course greatly exaggerates the 5.2° angle of the Moon's orbit with the ecliptic, but conceptually it shows the conditions for eclipses. The illustration was inspired by one in Chaisson and McMillan.",
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    avatar: "GR",
+    title: "Gamma Radioactivity",
+    subheader: "R Nave",
+    picturePath: "gamma.png",
+    main_info:
+      "Gamma radiation is the most useful type of radiation for medical purposes, but at the same time it is the most dangerous because of its ability to penetrate large thicknesses of material.",
+    first_summary:
+      "Gamma radioactivity is composed of electromagnetic rays. It is distinguished from x-rays only by the fact that it comes from the nucleus. Most gamma rays are somewhat higher in energy than x-rays and therefore are very penetrating.",
+    second_summary:
+      "Electron capture is one form of radioactivity. A parent nucleus may capture one of its orbital electrons and emit a neutrino. This is a process which competes with positron emission and has the same effect on the atomic number.",
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    avatar: "NFL",
+    title: "Newton's First Law",
+    subheader: "R Nave",
+    picturePath: "first_law.png",
+    main_info:
+      "Newton's First Law states that an object will remain at rest or in uniform motion in a straight line unless acted upon by an external force.",
+    first_summary:
+      "It may be seen as a statement about inertia, that objects will remain in their state of motion unless a force acts to change the motion. Any change in motion involves an acceleration, and then Newton's Second Law applies.",
+    second_summary:
+      "The statements of both the Second Law and the First Law here are presuming that the measurements are being made in a reference frame which is not itself accelerating. Such a frame is often referred to as an 'inertial frame'.",
+  },
+  {
+    _id: new mongoose.Types.ObjectId(),
+    avatar: "OL",
+    title: "Ohm's Law",
+    subheader: "R Nave",
+    picturePath: "ohm_law.png",
+    main_info:
+      "For many conductors of electricity, the electric current which will flow through them is directly proportional to the voltage applied to them.",
+    first_summary:
+      "When a microscopic view of Ohm's law is taken, it is found to depend upon the fact that the drift velocity of charges through the material is proportional to the electric field in the conductor. ",
+    second_summary:
+      "The ratio of voltage to current is called the resistance, and if the ratio is constant over a wide range of voltages, the material is said to be an 'ohmic' material. ",
+  },
+];
