@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useFilterContext } from '../context/filter_context';
 import { getUniqueValues, formatPrice } from '../utils/helpers';
-// import { FaCheck } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 
 const Filters = () => {
   const {
@@ -10,7 +10,7 @@ const Filters = () => {
       text,
       category,
       company,
-      // color,
+      color,
       min_price,
       price,
       max_price,
@@ -23,7 +23,7 @@ const Filters = () => {
 
   const categories = getUniqueValues(all_products, 'category');
   const companies = getUniqueValues(all_products, 'company');
-  // const colors = getUniqueValues(all_products, 'colors');
+  const colors = getUniqueValues(all_products, 'colors');
   return (
     <Wrapper>
       <div className="content">
@@ -82,7 +82,7 @@ const Filters = () => {
           </div>
           {/* end of company */}
           {/* colors */}
-          {/* <div className="form-control">
+          <div className="form-control">
             <h5>colors</h5>
             <div className="colors">
               {colors.map((c, index) => {
@@ -117,7 +117,7 @@ const Filters = () => {
                 );
               })}
             </div>
-          </div> */}
+          </div>
           {/* end of colors */}
           {/* price */}
           <div className="form-control">

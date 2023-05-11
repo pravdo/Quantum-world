@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import '../src/css/index.css';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
 import authReducer from './state';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
@@ -20,6 +20,7 @@ import storage from 'redux-persist/lib/storage';
 import { PersistGate } from 'redux-persist/integration/react';
 import { ProductsProvider } from 'context/products_context';
 import { FilterProvider } from 'context/filter_context';
+import { CartProvider } from 'context/cart_context';
 
 const persistConfig = { key: 'root', storage, version: 1 };
 const persistedReducer = persistReducer(persistConfig, authReducer);
@@ -39,11 +40,13 @@ root.render(
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistStore(store)}>
         <ProductsProvider>
+          {/* <BrowserRouter> */}
           <FilterProvider>
-            <BrowserRouter>
+            <CartProvider>
               <App />
-            </BrowserRouter>
+            </CartProvider>
           </FilterProvider>
+          {/* </BrowserRouter> */}
         </ProductsProvider>
       </PersistGate>
     </Provider>

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { useCartContext } from 'context/cart_context';
 
 const CartButton = () => {
-  const total_items = useCartContext();
+  const { total_items } = useCartContext();
   return (
     <Wrapper className="cart-btn-wrapper">
       <Link to="/cart" className="cart-btn">

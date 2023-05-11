@@ -4,11 +4,13 @@ import Sort from 'components/Sort'; //Sort, Filters
 import Filters from 'components/Filters';
 import ProductList from 'components/ProductList';
 import PageHero from 'components/PageHero';
+// import { CartProvider } from 'context/cart_context';
 const ProductsPage = () => {
   return (
     <main>
       <PageHero title="products" />
       <Wrapper className="page">
+        {/* <CartProvider> */}
         <div className="section-center products">
           <Filters />
           <div>
@@ -16,6 +18,7 @@ const ProductsPage = () => {
             <ProductList />
           </div>
         </div>
+        {/* </CartProvider> */}
       </Wrapper>
     </main>
   );

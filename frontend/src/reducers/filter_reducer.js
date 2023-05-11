@@ -94,6 +94,7 @@ const filter_reducer = (state, action) => {
       );
     }
     if (color !== 'all') {
+      // test if removed
       tempProducts = tempProducts.filter((product) => {
         return product.colors.find((c) => c === color);
       });
