@@ -1,7 +1,7 @@
 import { Typography, useTheme } from '@mui/material';
 import FlexBetween from 'components/FlexBeteen';
 import WidgetWrapper from 'components/WidgetWrapper';
-import FeaturedProducts from 'components/FeaturedProducts';
+// import FeaturedProducts from 'components/FeaturedProducts';
 
 const AdvertWidget = () => {
   const { palette } = useTheme();
@@ -35,9 +35,9 @@ const AdvertWidget = () => {
         </Typography>
       </WidgetWrapper>
       <br />
-      <WidgetWrapper>
+      {/* <WidgetWrapper>
         <FeaturedProducts />
-      </WidgetWrapper>
+      </WidgetWrapper> */}
     </>
   );
 };

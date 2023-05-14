@@ -1,5 +1,5 @@
 import { Typography, useTheme } from '@mui/material';
-import CartButton from 'components/ShoppingCart_Components/CartButtons';
+// import CartButton from 'components/ShoppingCart_Components/CartButtons';
 
 import { useNavigate } from 'react-router-dom';
 import CustomLink from '../CustomLink';
@@ -28,10 +28,10 @@ const Navbar = () => {
       </Typography>
 
       <ul>
-        <CustomLink to="/profile">Profile</CustomLink>
+        {/* <CustomLink to="/profile">Profile</CustomLink> */}
         <CustomLink to="/articles">Articles</CustomLink>
-        <CustomLink to="/online-store">Online Store</CustomLink>
-        <CartButton />
+        {/* <CustomLink to="/online-store">Online Store</CustomLink>
+        <CartButton /> */}
         <CustomLink to="/image-search">Search Image</CustomLink>
       </ul>
     </nav>

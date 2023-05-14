@@ -12,17 +12,17 @@ import ImagesGallery from './components/ImagesGallery';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home/Home';
 import Profile from './pages/Profile/Profile';
-import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
+// import ShoppingCart from './pages/ShoppingCart/ShoppingCart';
 import Articles from './pages/Articles/Articles';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 // import Products from 'pages/Products/Products';
-import SingleProductPage from 'pages/SingleProductPage/SingleProductPage';
+// import SingleProductPage from 'pages/SingleProductPage/SingleProductPage';
 import Footer from 'components/Footer';
 // import Chatbot from './components/ChatBot/Chatbot';
 import Error from 'pages/Error/Error';
 // import CartPage from 'pages/Cart/Cart';
-import CartForProducts from 'pages/CartForProducts/CartForProducts';
+// import CartForProducts from 'pages/CartForProducts/CartForProducts';
 // import { CartProvider } from 'context/cart_context';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -53,9 +53,9 @@ const App = () => {
             />
             {/* TODO: check path */}
             <Route path="/articles" element={<Articles />} />
-            <Route path="/online-store" element={<ShoppingCart />} />
+            {/* <Route path="/online-store" element={<ShoppingCart />} />
             <Route path="/products/:id" element={<SingleProductPage />} />
-            <Route path="/cart" element={<CartForProducts />} />
+            <Route path="/cart" element={<CartForProducts />} /> */}
             <Route path="/image-search" element={<ImagesGallery />} />
             <Route path="*" element={<Error />} />
           </Routes>
