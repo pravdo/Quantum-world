@@ -2,9 +2,13 @@ import mongoose from "mongoose";
 
 const ArticlesSchema = new mongoose.Schema(
   {
-    avatar: {
+    userId: {
       type: String,
       required: true,
+    },
+    avatar: {
+      type: String,
+      // required: true,
       min: 1,
       max: 10,
     },
@@ -18,7 +22,7 @@ const ArticlesSchema = new mongoose.Schema(
       type: String,
       required: true,
       max: 50,
-      unique: false,
+      // unique: false,
     },
     picturePath: {
       type: String,
