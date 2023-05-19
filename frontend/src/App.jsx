@@ -16,6 +16,8 @@ import Profile from './pages/Profile/Profile';
 import Articles from './pages/Articles/Articles';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import OnlineStore from 'pages/OnlineStore/OnlineStore';
+import Feedback from 'pages/Feedback/Feedback';
 // import Products from 'pages/Products/Products';
 // import SingleProductPage from 'pages/SingleProductPage/SingleProductPage';
 import Footer from 'components/Footer';
@@ -53,10 +55,12 @@ const App = () => {
             />
             {/* TODO: check path */}
             <Route path="/articles" element={<Articles />} />
+            <Route path="/online-store" element={<OnlineStore />} />
             {/* <Route path="/online-store" element={<ShoppingCart />} />
             <Route path="/products/:id" element={<SingleProductPage />} />
             <Route path="/cart" element={<CartForProducts />} /> */}
             <Route path="/image-search" element={<ImagesGallery />} />
+            <Route path="/feedback" element={<Feedback />} />
             <Route path="*" element={<Error />} />
           </Routes>
           <Footer />
