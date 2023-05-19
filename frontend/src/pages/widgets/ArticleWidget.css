@@ -1,0 +1,13 @@
+.boxWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* width: 30%; */
+}
+
+@media (min-width: 768px) {
+  .boxWrapper > .MuiCard-root {
+    width: calc(33.33% - 1rem); /* 3 items per row with 1rem margin between */
+    margin-bottom: 1rem;
+  }
+}

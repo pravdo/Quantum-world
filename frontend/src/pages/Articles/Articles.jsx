@@ -1,5 +1,10 @@
+import { useSelector } from 'react-redux';
+import ArticlesWidget from 'pages/widgets/ArticlesWidget';
+
 const Articles = () => {
-  return <h1>Articles</h1>;
+  const { _id } = useSelector((state) => state.user);
+
+  return <ArticlesWidget userId={_id} />;
 };
 
 export default Articles;

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ArticlesSchema = new mongoose.Schema(
+const articlesSchema = new mongoose.Schema(
   {
     userId: {
       type: String,
@@ -50,5 +50,5 @@ const ArticlesSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Articles = mongoose.model("Articles", ArticlesSchema);
+const Articles = mongoose.model("Articles", articlesSchema);
 export default Articles;
