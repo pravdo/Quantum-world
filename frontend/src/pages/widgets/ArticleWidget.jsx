@@ -85,7 +85,12 @@ const ArticleWidget = ({
 
   return (
     <div className="boxWrapper">
-      <WidgetWrapper m="2rem 0" display={'flex'}>
+      <WidgetWrapper
+        m="2rem 0"
+        display={'flex'}
+        justifyContent={'center'}
+        // alignItems={'center'}
+      >
         <Card sx={{ maxWidth: 400 }}>
           <CardHeader
             avatar={

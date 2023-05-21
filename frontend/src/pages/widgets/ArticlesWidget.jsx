@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setArticles } from 'state';
 // import PostWidget from './PostWidget';
 import ArticleWidget from './ArticleWidget';
+import './ArticleWidget.css';
 
 const ArticlesWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
@@ -41,32 +42,34 @@ const ArticlesWidget = ({ userId, isProfile = false }) => {
 
   return (
     <>
-      {articles.map(
-        ({
-          _id,
-          userId,
-          avatar,
-          title,
-          subheader,
-          main_info,
-          picturePath,
-          first_summary,
-          second_summary,
-        }) => (
-          <ArticleWidget
-            key={_id}
-            postId={_id}
-            postUserId={userId}
-            title={title}
-            avatar={avatar}
-            subheader={subheader}
-            picturePath={picturePath}
-            main_info={main_info}
-            first_summary={first_summary}
-            second_summary={second_summary}
-          />
-        )
-      )}
+      <main>
+        {articles.map(
+          ({
+            _id,
+            userId,
+            avatar,
+            title,
+            subheader,
+            main_info,
+            picturePath,
+            first_summary,
+            second_summary,
+          }) => (
+            <ArticleWidget
+              key={_id}
+              postId={_id}
+              postUserId={userId}
+              title={title}
+              avatar={avatar}
+              subheader={subheader}
+              picturePath={picturePath}
+              main_info={main_info}
+              first_summary={first_summary}
+              second_summary={second_summary}
+            />
+          )
+        )}
+      </main>
     </>
   );
 };
