@@ -3,6 +3,7 @@ import { Typography, useTheme } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
 import CustomLink from '../CustomLink';
+import { ShoppingCart } from 'phosphor-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -31,6 +32,9 @@ const Navbar = () => {
         {/* <CustomLink to="/profile">Profile</CustomLink> */}
         <CustomLink to="/articles">Articles</CustomLink>
         <CustomLink to="/online-store">Online Store</CustomLink>
+        <CustomLink to="/cart">
+          <ShoppingCart size={26} />
+        </CustomLink>
         {/*<CartButton /> */}
         <CustomLink to="/image-search">Search Image</CustomLink>
         <CustomLink to="/feedback">Feedback</CustomLink>

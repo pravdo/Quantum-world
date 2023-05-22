@@ -2,9 +2,9 @@ import {
   EditOutlined,
   DeleteOutlined,
   AttachFileOutlined,
-  GifBoxOutlined,
+  // GifBoxOutlined,
   ImageOutlined,
-  MicOutlined,
+  // MicOutlined,
   MoreHorizOutlined,
 } from '@mui/icons-material';
 import {

@@ -24,9 +24,10 @@ import Footer from 'components/Footer';
 // import Chatbot from './components/ChatBot/Chatbot';
 import Error from 'pages/Error/Error';
 // import CartPage from 'pages/Cart/Cart';
-// import CartForProducts from 'pages/CartForProducts/CartForProducts';
+import CartForProducts from 'pages/CartForProducts/CartForProducts';
 // import { CartProvider } from 'context/cart_context';
 import { BrowserRouter as Router } from 'react-router-dom';
+import ShopContextProvider from 'context/onlineStore-context';
 
 const App = () => {
   const mode = useSelector((state) => state.mode);
@@ -35,39 +36,39 @@ const App = () => {
 
   return (
     <div>
-      <Router>
-        <ThemeProvider theme={theme}>
-          <CssBaseline></CssBaseline>
-          {/* <Header title="Quantum World" /> */}
-          {/* <CartProvider> */}
-          <Navbar />
-          <Routes>
-            <Route
-              path="/home"
-              element={isAuth ? <Home /> : <Navigate to="/" />}
-            />
-            {/* <Route path="/home" element={<Home />} /> */}
-            <Route path="/" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route
-              path="/profile/:userId"
-              element={isAuth ? <Profile /> : <Navigate to="/" />}
-            />
-            {/* TODO: check path */}
-            <Route path="/articles" element={<Articles />} />
-            <Route path="/online-store" element={<OnlineStore />} />
-            {/* <Route path="/online-store" element={<ShoppingCart />} />
-            <Route path="/products/:id" element={<SingleProductPage />} />
-            <Route path="/cart" element={<CartForProducts />} /> */}
-            <Route path="/image-search" element={<ImagesGallery />} />
-            <Route path="/feedback" element={<Feedback />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
-          <Footer />
-          {/* </CartProvider> */}
-          {/* <Chatbot /> */}
-        </ThemeProvider>
-      </Router>
+      <ShopContextProvider>
+        <Router>
+          <ThemeProvider theme={theme}>
+            <CssBaseline></CssBaseline>
+            {/* <Header title="Quantum World" /> */}
+            {/* <CartProvider> */}
+            <Navbar />
+            <Routes>
+              <Route
+                path="/home"
+                element={isAuth ? <Home /> : <Navigate to="/" />}
+              />
+              {/* <Route path="/home" element={<Home />} /> */}
+              <Route path="/" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route
+                path="/profile/:userId"
+                element={isAuth ? <Profile /> : <Navigate to="/" />}
+              />
+              {/* TODO: check path */}
+              <Route path="/articles" element={<Articles />} />
+              <Route path="/online-store" element={<OnlineStore />} />
+              <Route path="/cart" element={<CartForProducts />} />
+              <Route path="/image-search" element={<ImagesGallery />} />
+              <Route path="/feedback" element={<Feedback />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
+            <Footer />
+            {/* </CartProvider> */}
+            {/* <Chatbot /> */}
+          </ThemeProvider>
+        </Router>
+      </ShopContextProvider>
     </div>
   );
 };
