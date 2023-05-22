@@ -18,7 +18,8 @@
 }
 
 .product img {
-  width: 400px;
+  width: 90%;
+  height: 100%;
 }
 
 .product .description {
