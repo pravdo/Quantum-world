@@ -12,6 +12,11 @@ export const CartForProducts = () => {
 
   const navigate = useNavigate();
 
+  const handleCheckout = () => {
+    navigate('/checkout', { state: { totalAmount } });
+    checkout();
+  };
+
   return (
     <div className="cart">
       <div>
@@ -34,14 +39,7 @@ export const CartForProducts = () => {
             {' '}
             Continue Shopping{' '}
           </button>
-          <button
-            onClick={() => {
-              checkout();
-              navigate('/checkout');
-            }}
-          >
-            Checkout
-          </button>
+          <button onClick={handleCheckout}>Checkout</button>
         </div>
       ) : (
         <h1> Your Shopping Cart is Empty</h1>

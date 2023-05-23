@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import styled from 'styled-components';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
@@ -47,20 +49,22 @@ const PaymentFrom = () => {
   const [success, setSuccess] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
+  const location = useLocation();
+  const { totalAmount } = location.state;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
+      // amount: totalAmount,
     });
 
     if (!error) {
       try {
         const { id } = paymentMethod;
         const response = await axios.post('http://localhost:4000/payment', {
-          // to fix - get total amount from products
-          amount: 1000,
+          amount: totalAmount * 100,
           id,
         });
 
