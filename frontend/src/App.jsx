@@ -28,6 +28,7 @@ import CartForProducts from 'pages/CartForProducts/CartForProducts';
 // import { CartProvider } from 'context/cart_context';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ShopContextProvider from 'context/onlineStore-context';
+import Checkout from 'pages/Checkout/Checkout';
 
 const App = () => {
   const mode = useSelector((state) => state.mode);
@@ -56,6 +57,7 @@ const App = () => {
                 element={isAuth ? <Profile /> : <Navigate to="/" />}
               />
               {/* TODO: check path */}
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/articles" element={<Articles />} />
               <Route path="/online-store" element={<OnlineStore />} />
               <Route path="/cart" element={<CartForProducts />} />
