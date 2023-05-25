@@ -5,8 +5,7 @@ import { loadStripe } from '@stripe/stripe-js';
 
 import PaymentFrom from './PaymentFrom';
 
-const PUBLIC_KEY =
-  'pk_test_51NAgmJKl2kkRRZHNkmkX59zY3V2XvRtNqFtuJC0GeFtmGqu2LOb40SBSaRp6g3PYu6HP7tYYuw9WqKu32VDIvGe600IV3txNfl';
+const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY_STRIPE;
 
 const stripeTestPromise = loadStripe(PUBLIC_KEY);
 
