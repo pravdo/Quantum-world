@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../../context/onlineStore-context';
-// import { CardMedia, Card } from '@mui/material';
 
 import './CartForProducts.css';
 
@@ -21,16 +20,6 @@ const CartItem = (props) => {
           }}
         />
       </div>
-      {/* <Card>
-        <CardMedia
-          component="img"
-          // height="194"
-          image={productImage}
-          alt="product"
-          className="shopping-image" // Add a class name to the img element
-          style={{ borderRadius: '0.75rem' }} // Apply inline styles to the img element
-        />
-      </Card> */}
       <div className="description">
         <p>
           <b>{productName}</b>
