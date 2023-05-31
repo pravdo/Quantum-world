@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import {
   Box,
   IconButton,
@@ -14,6 +14,8 @@ import { Search, DarkMode, LightMode, Menu, Close } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from 'state';
 import FlexBetween from './FlexBeteen';
+
+import { ShopContext } from 'context/onlineStore-context';
 
 import './Header.css';
 import { ReactComponent as Logo } from '../images/textLogo.svg';
@@ -33,6 +35,8 @@ const Header = ({ title }) => {
 
   const fullName = `${user.firstName} ${user.lastName}`;
   // const fullName = 'TBD';
+
+  const { checkout } = useContext(ShopContext);
 
   return (
     <header className="header">
@@ -91,6 +95,7 @@ const Header = ({ title }) => {
                   <MenuItem
                     onClick={() => {
                       // clearCart(); // ADD PROPER FUNCTION
+                      checkout();
                       dispatch(setLogout());
                     }}
                   >

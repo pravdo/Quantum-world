@@ -57,7 +57,6 @@ const PaymentFrom = () => {
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
-      // amount: totalAmount,
     });
 
     if (!error) {
