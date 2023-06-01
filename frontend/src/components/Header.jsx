@@ -94,7 +94,6 @@ const Header = ({ title }) => {
                   </MenuItem>
                   <MenuItem
                     onClick={() => {
-                      // clearCart(); // ADD PROPER FUNCTION
                       checkout();
                       dispatch(setLogout());
                     }}
