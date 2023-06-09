@@ -51,6 +51,7 @@ const Form = () => {
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  // const [isLoginInvalid, setIsLoginInvalid] = useState(false);
   const isNonMobile = useMediaQuery('(min-width:600px)');
   const isLogin = pageType === 'login';
   const isRegister = pageType === 'register';
@@ -79,22 +80,36 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch('http://localhost:3001/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(values),
-    });
-    const loggedIn = await loggedInResponse.json();
-    onSubmitProps.resetForm();
-    if (loggedIn) {
-      dispatch(
-        setLogin({
-          user: loggedIn.user,
-          token: loggedIn.token,
-        })
-      );
-      navigate('/home');
+    try {
+      const loggedInResponse = await fetch('http://localhost:3001/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+
+      if (loggedInResponse.status === 400) {
+        // const errorResponse = await loggedInResponse.json();
+        // const errorMessage = errorResponse.message;
+        // Use the errorMessage for validation or display it to the user
+        alert('Invalid credentials');
+      } else if (loggedInResponse.ok) {
+        const loggedIn = await loggedInResponse.json();
+        dispatch(
+          setLogin({
+            user: loggedIn.user,
+            token: loggedIn.token,
+          })
+        );
+        navigate('/home');
+      } else {
+        throw new Error('An error occurred during login.');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      // Handle any other errors that may occur during the login process
     }
+
+    onSubmitProps.resetForm();
   };
 
   const handleFormSubmit = async (values, onSubmitProps) => {
