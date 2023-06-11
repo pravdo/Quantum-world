@@ -4,7 +4,8 @@ const WelcomeImages = () => {
       <div className="bg-light  p-5 rounded-lg m-3">
         <h1 className="display-4">Quantum World Images</h1>
         <p className="lead">
-          This is a simple app that retrieves photos using Unsplash API. In
+          This is our module that retrieves photos using Unsplash API. You can
+          use them in your projects without worrying about copyright claims. In
           order to start, enter any search term in the input field
         </p>
         <hr className="my-4"></hr>

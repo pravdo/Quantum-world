@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
-// import { FaLinkedin } from 'react-icons/fa';
 
 import { ReactComponent as MainLogo } from '../images/main-logo.svg';
-//  TODO Finish it by adding Contact us page
+
 const Footer = () => {
   return (
     <>
@@ -30,16 +29,10 @@ const Footer = () => {
         </div>
 
         <div className="links">
-          {/* <a className='fa-brands fa-github'></a> */}
           <FontAwesomeIcon
             icon={faAddressCard}
             style={{ fill: '#2980B9', height: '2em', width: '2em' }}
           />
-          {/* <FontAwesomeIcon icon="fa-brands fa-twitter" /> */}
-          {/* <FontAwesomeIcon
-            icon={FaLinkedin}
-            style={{ fill: '#2980B9', height: '2em', width: '2em' }}
-          /> */}
         </div>
       </Container>
     </>

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Header from './Header';
 import Search from './Search';
 import ImageCard from './ImageCard';
 import WelcomeImages from './WelcomeImages/WelcomeImages';
@@ -31,7 +30,6 @@ const ImagesGallery = () => {
 
   return (
     <div>
-      {/* <Header title="Quantum World" /> */}
       <Search
         word={word}
         setWord={setWord}
