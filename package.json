@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "@babel/preset-env": "^7.22.4",
     "react-icons": "^4.8.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.22.3"
   }
 }

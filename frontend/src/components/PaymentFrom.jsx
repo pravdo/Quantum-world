@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import styled from 'styled-components';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
@@ -52,11 +53,17 @@ const PaymentFrom = () => {
   const location = useLocation();
   const { totalAmount } = location.state;
 
+  const user = useSelector((state) => state.user);
+  const fullName = `${user.firstName} ${user.lastName}`;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardElement),
+      billing_details: {
+        name: fullName, // Replace with the customer's name
+      },
     });
 
     if (!error) {
