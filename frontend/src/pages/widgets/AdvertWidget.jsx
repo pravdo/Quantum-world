@@ -13,7 +13,12 @@ const AdvertWidget = () => {
     <>
       <WidgetWrapper>
         <FlexBetween>
-          <Typography color={dark} variant="h5" fontWeight="500">
+          <Typography
+            color={dark}
+            variant="h5"
+            fontWeight="500"
+            className="sponsored"
+          >
             Sponsored
           </Typography>
           <Typography color={medium}>Create Ad</Typography>

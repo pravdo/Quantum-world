@@ -51,7 +51,6 @@ const Form = () => {
   const { palette } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const [isLoginInvalid, setIsLoginInvalid] = useState(false);
   const isNonMobile = useMediaQuery('(min-width:600px)');
   const isLogin = pageType === 'login';
   const isRegister = pageType === 'register';
@@ -88,10 +87,8 @@ const Form = () => {
       });
 
       if (loggedInResponse.status === 400) {
-        // const errorResponse = await loggedInResponse.json();
-        // const errorMessage = errorResponse.message;
         // Use the errorMessage for validation or display it to the user
-        alert('Invalid credentials');
+        alert('Invalid email or password');
       } else if (loggedInResponse.ok) {
         const loggedIn = await loggedInResponse.json();
         dispatch(
@@ -226,6 +223,7 @@ const Form = () => {
 
             <TextField
               label="Email"
+              id="email"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.email}
@@ -252,6 +250,7 @@ const Form = () => {
             <Button
               fullWidth
               type="submit"
+              id="login"
               sx={{
                 m: '2rem 0',
                 p: '1rem',

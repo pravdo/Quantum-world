@@ -26,7 +26,7 @@ const Login = () => {
         backgroundColor={theme.palette.background.alt}
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: '1.5rem' }}>
-          Quatum World, a place for everyone who wants to gain knoledge while
+          Quantum World, a place for everyone who wants to gain knoledge while
           having fun! <br /> Join us now to access the full potential of the
           platform
         </Typography>
