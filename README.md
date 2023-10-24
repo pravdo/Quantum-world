@@ -11,4 +11,5 @@ Enjoy a unique experince where everything you may need you can find in one place
 
 \*Graduate project
 
-TODO
+Tech stack:
+React.js, Node.js, Express.js, MongoDB, Python, Flask
