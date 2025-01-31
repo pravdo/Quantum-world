@@ -1,10 +1,14 @@
 import mongoose from "mongoose";
 
-const ArticlesSchema = new mongoose.Schema(
+const articlesSchema = new mongoose.Schema(
   {
-    avatar: {
+    userId: {
       type: String,
       required: true,
+    },
+    avatar: {
+      type: String,
+      // required: true,
       min: 1,
       max: 10,
     },
@@ -18,7 +22,7 @@ const ArticlesSchema = new mongoose.Schema(
       type: String,
       required: true,
       max: 50,
-      unique: false,
+      // unique: false,
     },
     picturePath: {
       type: String,
@@ -46,5 +50,5 @@ const ArticlesSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Articles = mongoose.model("Articles", ArticlesSchema);
+const Articles = mongoose.model("Articles", articlesSchema);
 export default Articles;

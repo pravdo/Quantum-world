@@ -79,22 +79,34 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch('http://localhost:3001/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(values),
-    });
-    const loggedIn = await loggedInResponse.json();
-    onSubmitProps.resetForm();
-    if (loggedIn) {
-      dispatch(
-        setLogin({
-          user: loggedIn.user,
-          token: loggedIn.token,
-        })
-      );
-      navigate('/home');
+    try {
+      const loggedInResponse = await fetch('http://localhost:3001/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+
+      if (loggedInResponse.status === 400) {
+        // Use the errorMessage for validation or display it to the user
+        alert('Invalid email or password');
+      } else if (loggedInResponse.ok) {
+        const loggedIn = await loggedInResponse.json();
+        dispatch(
+          setLogin({
+            user: loggedIn.user,
+            token: loggedIn.token,
+          })
+        );
+        navigate('/home');
+      } else {
+        throw new Error('An error occurred during login.');
+      }
+    } catch (error) {
+      console.error('Login error:', error);
+      // Handle any other errors that may occur during the login process
     }
+
+    onSubmitProps.resetForm();
   };
 
   const handleFormSubmit = async (values, onSubmitProps) => {
@@ -211,6 +223,7 @@ const Form = () => {
 
             <TextField
               label="Email"
+              id="email"
               onBlur={handleBlur}
               onChange={handleChange}
               value={values.email}
@@ -237,6 +250,7 @@ const Form = () => {
             <Button
               fullWidth
               type="submit"
+              id="login"
               sx={{
                 m: '2rem 0',
                 p: '1rem',

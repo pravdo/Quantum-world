@@ -2,5 +2,9 @@
   "compilerOptions": {
     "baseUrl": "src"
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "__tests__/cartforproducts.test.js",
+    "__tests__/auth.test.js"
+  ]
 }

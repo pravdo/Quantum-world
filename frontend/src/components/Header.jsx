@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import {
   Box,
   IconButton,
@@ -10,30 +10,16 @@ import {
   useTheme,
   useMediaQuery,
 } from '@mui/material';
-import {
-  Search,
-  // Message,
-  DarkMode,
-  LightMode,
-  // Notifications,
-  // Help,
-  Menu,
-  Close,
-} from '@mui/icons-material';
+import { Search, DarkMode, LightMode, Menu, Close } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from 'state';
 import FlexBetween from './FlexBeteen';
-// import { useCartContext } from 'context/cart_context';
 
-// import { Navbar } from 'react-bootstrap';
-// import CustomLink from './CustomLink';
+import { ShopContext } from 'context/onlineStore-context';
+
 import './Header.css';
 import { ReactComponent as Logo } from '../images/textLogo.svg';
 import { ReactComponent as MainLogo } from '../images/main-logo.svg';
-
-// const navbarStyle = {
-//   backgroundColor: '#eeeeee',
-// };
 
 const Header = ({ title }) => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
@@ -46,17 +32,16 @@ const Header = ({ title }) => {
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
   const alt = theme.palette.background.alt;
-  // const clearCart = useCartContext();
 
   const fullName = `${user.firstName} ${user.lastName}`;
   // const fullName = 'TBD';
+
+  const { checkout } = useContext(ShopContext);
 
   return (
     <header className="header">
       <FlexBetween padding="1rem 6%" backgroundColor={alt}>
         <FlexBetween gap="1.75rem">
-          {/* <Navbar style={navbarStyle} variant="light"> */}
-          {/* <Container> */}
           <MainLogo
             alt={title}
             style={{ maxWidth: '20rem', maxHeight: '10rem' }}
@@ -86,9 +71,6 @@ const Header = ({ title }) => {
                   <LightMode sx={{ color: dark, fontSize: '25px' }} />
                 )}
               </IconButton>
-              {/* <Message sx={{ fontSize: '25px' }} />
-              <Notifications sx={{ fontSize: '25px' }} />
-              <Help sx={{ fontSize: '25px' }} /> */}
               <FormControl variant="standard" value={fullName}>
                 <Select
                   value={fullName}
@@ -112,7 +94,7 @@ const Header = ({ title }) => {
                   </MenuItem>
                   <MenuItem
                     onClick={() => {
-                      // clearCart();
+                      checkout();
                       dispatch(setLogout());
                     }}
                   >

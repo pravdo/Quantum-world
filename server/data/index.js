@@ -287,9 +287,10 @@ export const posts = [
 export const articles = [
   {
     _id: new mongoose.Types.ObjectId(),
+    userId: userIds[1],
     avatar: "DP",
     title: "Doppler Effect",
-    subheader: "R Nave",
+    subheader: "R Nave1",
     picturePath: "doppler_effect.png",
     main_info:
       "You hear the high pitch of the siren of the approaching ambulance, and notice that its pitch drops suddenly as the ambulance passes you. That is called the Doppler effect.",
@@ -300,9 +301,10 @@ export const articles = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
+    userId: userIds[2],
     avatar: "dB",
     title: "Decibels",
-    subheader: "R Nave",
+    subheader: "R Nave2",
     picturePath: "decibels.jpg",
     main_info:
       "The sound intensity I may be expressed in decibels above the standard threshold of hearing I0.",
@@ -313,9 +315,10 @@ export const articles = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
+    userId: userIds[3],
     avatar: "SE",
     title: "Solar Eclipse",
-    subheader: "R Nave",
+    subheader: "R Nave3",
     picturePath: "solar_eclipse.png",
     main_info:
       "A solar eclipse occurs when the Moon's shadow falls on the Earth, and a lunar eclipse occurs when the Earth's shadow falls on the Moon.",
@@ -326,9 +329,10 @@ export const articles = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
+    userId: userIds[4],
     avatar: "GR",
     title: "Gamma Radioactivity",
-    subheader: "R Nave",
+    subheader: "R Nave4",
     picturePath: "gamma.png",
     main_info:
       "Gamma radiation is the most useful type of radiation for medical purposes, but at the same time it is the most dangerous because of its ability to penetrate large thicknesses of material.",
@@ -339,9 +343,10 @@ export const articles = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
+    userId: userIds[5],
     avatar: "NFL",
     title: "Newton's First Law",
-    subheader: "R Nave",
+    subheader: "R Nave5",
     picturePath: "first_law.png",
     main_info:
       "Newton's First Law states that an object will remain at rest or in uniform motion in a straight line unless acted upon by an external force.",
@@ -352,9 +357,10 @@ export const articles = [
   },
   {
     _id: new mongoose.Types.ObjectId(),
+    userId: userIds[6],
     avatar: "OL",
     title: "Ohm's Law",
-    subheader: "R Nave",
+    subheader: "R Nave6",
     picturePath: "ohm_law.png",
     main_info:
       "For many conductors of electricity, the electric current which will flow through them is directly proportional to the voltage applied to them.",
